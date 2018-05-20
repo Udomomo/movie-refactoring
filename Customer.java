@@ -39,7 +39,7 @@ public class Customer {
             Rental each = rentals.nextElement();
             
             //一行ごとに金額を計算
-            //TODO: この計算は映画の種別に紐づくので、CustomerでもRentalでもなくMovieクラスで行うべき
+            //TODO: この計算は映画の分類が変わると変化する。CustomerクラスやRentalクラスよりも映画の分類の方が変わりやすいので、Movieクラスで行うべき
             switch (each.getMovie().getPriceCode()) {
                 
                 case Movie.REGULAR:
