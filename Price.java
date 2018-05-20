@@ -1,18 +1,18 @@
 package MovieRental;
 
-abstract class Price {
+interface Price {
     
-    abstract int getPriceCode();
-    abstract double getCharge(int daysRented);
+    int getPriceCode();
+    double getCharge(int daysRented);
     
-    int getFrequentRenterPoints(int daysRented) {
+    default int getFrequentRenterPoints(int daysRented) {
         
         return 1;
     }
     
 }
 
-class ChildrensPrice extends Price {
+class ChildrensPrice implements Price {
     
     public int getPriceCode() {
         
@@ -32,7 +32,7 @@ class ChildrensPrice extends Price {
     
 }
 
-class NewReleasePrice extends Price {
+class NewReleasePrice implements Price {
     
     public int getPriceCode() {
         
@@ -58,7 +58,7 @@ class NewReleasePrice extends Price {
     
 }
 
-class RegularPrice extends Price {
+class RegularPrice implements Price {
     
     public int getPriceCode() {
         
