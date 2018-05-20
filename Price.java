@@ -4,6 +4,12 @@ abstract class Price {
     
     abstract int getPriceCode();
     abstract double getCharge(int daysRented);
+    
+    int getFrequentRenterPoints(int daysRented) {
+        
+        return 1;
+    }
+    
 }
 
 class ChildrensPrice extends Price {
@@ -37,6 +43,19 @@ class NewReleasePrice extends Price {
      
         return daysRented * 3;
     }
+    
+    @Override
+    public int getFrequentRenterPoints(int daysRented) {
+        
+        //新作を2日以上借りたらボーナスポイント
+        if (daysRented > 1) {
+            return 2;
+        }
+        else {
+            return 1;
+        }
+    }
+    
 }
 
 class RegularPrice extends Price {
