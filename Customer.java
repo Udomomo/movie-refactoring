@@ -23,7 +23,6 @@ public class Customer {
         return _name;
     }
     
-    //TODO: 計算のルールと計算書の見た目の作成が混じっており、計算ルールや映画の分類方法が変わったときの再利用性が低い
     public String statement() {
         
         double totalAmount = 0;
