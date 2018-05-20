@@ -24,6 +24,7 @@ public class Customer {
     }
     
     //TODO: 計算のルールと計算書の見た目の作成が混じっており、計算ルールや映画の分類方法が変わったときの再利用性が低い
+    //TODO: そもそも計算は意味的にCustomerクラスと関係ない。計算はRentalクラスですべき
     public String statement() {
         
         double totalAmount = 0;
